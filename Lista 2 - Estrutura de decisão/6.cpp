@@ -4,26 +4,26 @@
 int main()
 {
 	/*
-	6) Escreva um programa para ler as três notas obtidas por um aluno durante 
-		o semestre. Calcular a sua média (aritmética) e informar a sua menção Aprovado (media 
-		>= 7), Reprovado (media <= 5) e Recuperação (media entre 5.1 e 6.9)
+	6) Escreva um programa para ler as trÃªs notas obtidas por um aluno durante 
+		o semestre. Calcular a sua mÃ©dia (aritmÃ©tica) e informar a sua menÃ§Ã£o Aprovado (media 
+		>= 7), Reprovado (media <= 5) e RecuperaÃ§Ã£o (media entre 5.1 e 6.9)
 	*/
 	setlocale(LC_ALL, "Portuguese");
 	
 	float nota1, nota2, nota3, media;
 	int semestre = 1;
 	
-	printf("Digite sua nota do %iº semestre: ", semestre++);
+	printf("Digite sua nota do %iÂº semestre: ", semestre++);
 	scanf("%f", &nota1);
 	
-	printf("Digite sua nota do %iº semestre: ", semestre++);
+	printf("Digite sua nota do %iÂº semestre: ", semestre++);
 	scanf("%f", &nota2);
 	
-	printf("Digite sua nota do %iº semestre: ", semestre++);
+	printf("Digite sua nota do %iÂº semestre: ", semestre++);
 	scanf("%f", &nota3);
 	
 	media = (nota1 + nota2 + nota3) / 3;
-	printf("Média = %.2f\n", media);
+	printf("MÃ©dia = %.2f\n", media);
 	
 	if(media >= 7)
 	{
@@ -31,11 +31,11 @@ int main()
 	}
 	else if(media > 5)
 	{
-		printf("Recuperação");
+		printf("RecuperaÃ§Ã£o");
 	}
 	else
 	{
-		printf("Recuperação");
+		printf("Reprovado");
 	}
 	
 	return 0;
