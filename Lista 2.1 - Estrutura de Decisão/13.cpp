@@ -4,36 +4,51 @@
 int main()
 {
 	/*
-	13 - FaÁa um algoritmo para ler trÍs notas e o n˙mero de faltas de um aluno e escrever 
-qual a sua situaÁ„o final: Aprovado, Reprovado por Falta ou Reprovado por MÈdia. A 
-mÈdia para aprovaÁ„o È 7,0 e o limite de faltas È 25% do total de aulas. O n˙mero de aulas 
-ministradas no semestre foi de 80. A reprovaÁ„o por falta sobrepıe a reprovaÁ„o por 
-MÈdia. 
+	13 - Fa√ßa um algoritmo para ler tr√™s notas e o n√∫mero de faltas de um aluno e escrever 
+qual a sua situa√ß√£o final: Aprovado, Reprovado por Falta ou Reprovado por M√©dia. A 
+m√©dia para aprova√ß√£o √© 7,0 e o limite de faltas √© 25% do total de aulas. O n√∫mero de aulas 
+ministradas no semestre foi de 80. A reprova√ß√£o por falta sobrep√µe a reprova√ß√£o por 
+M√©dia. 
 	*/
 	setlocale(LC_ALL, "Portuguese");
 	
-	float nota1, nota2, nota3, media, frequenciaAulas;
-	int aulas = 80, aulasComparecidas, count = 1;
+	float nota1, nota2, nota3, media, frequenciaAulas, aulas = 80;
+	int faltas, count = 1, limiteFaltas = aulas * 0.25;
 	
-	printf("Digite a %i∫ nota: ", count++);
+	printf("Digite a %i¬∫ nota: ", count++);
 	scanf("%f", &nota1);
 
-	printf("Digite a %i∫ nota: ", count++);
+	printf("Digite a %i¬∫ nota: ", count++);
 	scanf("%f", &nota2);
 		
-	printf("Digite a %i∫ nota: ", count++);
+	printf("Digite a %i¬∫ nota: ", count++);
 	scanf("%f", &nota3);
 	
-	printf("Quantidade de aulas comparecidas: ");
-	scanf("%i", &aulasComparecidas);
+	printf("Quantidade de faltas: ");
+	scanf("%i", &faltas);
 	
 	media = (nota1 + nota2 + nota3) / 3;
 	
-	frequenciaAulas = (aulasComparecidas / aulas); 
+	frequenciaAulas = (faltas / aulas) * 100;
+	printf("\nM√©dia das notas: %.2f\n", media);
 	
-	printf("MÈdia das notas: %.2f\n", media);
+	printf("Frequ√™ncia de faltas: %.2f%%\n", frequenciaAulas);
 	
-	printf("FrequÍncia nas Aulas: %f", frequenciaAulas);
+	if(frequenciaAulas > limiteFaltas)
+	{
+		printf("O limite de faltas √© de 25%%!\n", frequenciaAulas);
+		printf("Reprovado por falta.");
+	}
+	else if(media >= 7)
+	{
+		printf("M√©dia = %.2f\n", media);
+		printf("Aprovad0");
+	}
+	else
+	{
+		printf("M√©dia = %.2f", media);
+		printf("Reprovado por m√©dia");
+	}
 	
 	return 0;
 }
